@@ -1,0 +1,1985 @@
+/*************************************************Login Page********************************************************/
+
+/*=========================================
+            AUTH SECTION
+=========================================*/
+
+.auth-section {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 40px 20px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(rgba(255, 255, 255, .82), rgba(255, 255, 255, .82)),
+        url("../images/login-bg.jpg") center/cover no-repeat;
+
+}
+
+.global-container {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    min-height: calc(100vh - 80px);
+
+}
+
+/*=========================================
+            BACKGROUND SHAPES
+=========================================*/
+
+.shape {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    z-index: 0;
+
+}
+
+.shape-1 {
+
+    width: 300px;
+
+    height: 300px;
+
+    background: rgba(59, 130, 246, .12);
+
+    top: -100px;
+
+    left: -100px;
+
+}
+
+.shape-2 {
+
+    width: 220px;
+
+    height: 220px;
+
+    background: rgba(245, 158, 11, .12);
+
+    bottom: -80px;
+
+    right: -80px;
+
+}
+
+.shape-3 {
+
+    width: 140px;
+
+    height: 140px;
+
+    background: rgba(59, 130, 246, .08);
+
+    top: 45%;
+
+    right: 8%;
+
+}
+
+.shape-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    backdrop-filter: blur(3px);
+
+}
+
+/*=========================================
+            TOP ACTIONS
+=========================================*/
+
+.auth-top-actions {
+
+    position: absolute;
+
+    top: 35px;
+
+    right: 40px;
+
+    display: flex;
+
+    gap: 15px;
+
+    z-index: 10;
+
+}
+
+/*=========================================
+            CARD
+=========================================*/
+
+.auth-card {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: 100%;
+
+    max-width: 620px;
+
+    background: rgba(255, 255, 255, .92);
+
+    backdrop-filter: blur(18px);
+
+    border-radius: 32px;
+
+    padding: 55px;
+
+    box-shadow: 0 25px 70px rgba(0, 0, 0, .08);
+
+    text-align: center;
+
+}
+
+.auth-logo {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+
+}
+
+.auth-logo img {
+
+    width: 190px;
+
+    display: block;
+
+}
+
+.auth-card h1 {
+
+    font-size: 48px;
+
+    margin: 25px 0 18px;
+
+    line-height: 1.2;
+
+}
+
+.auth-card>p {
+
+    max-width: 470px;
+
+    margin: 0 auto 40px;
+
+    line-height: 1.8;
+
+    font-size: 17px;
+
+}
+
+/*=========================================
+            FORM
+=========================================*/
+
+.input-group {
+
+    text-align: left;
+
+    margin-bottom: 25px;
+
+}
+
+.input-group label {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-weight: 600;
+
+    color: var(--heading-color);
+
+}
+
+.input-group input {
+
+    width: 100%;
+
+    height: 58px;
+
+    border: 1px solid #DCE4EE;
+
+    border-radius: 16px;
+
+    padding: 0 18px;
+
+    background: var(--white-color);
+
+    transition: var(--transition);
+
+}
+
+.input-group input:focus {
+
+    border-color: var(--primary-color);
+
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, .10);
+
+}
+
+/*=========================================
+        PASSWORD
+=========================================*/
+
+.password-box {
+
+    position: relative;
+
+}
+
+.password-box input {
+
+    padding-right: 60px;
+
+}
+
+.password-toggle {
+
+    position: absolute;
+
+    top: 50%;
+
+    right: 18px;
+
+    transform: translateY(-50%);
+
+    background: none;
+
+    border: none;
+
+    cursor: pointer;
+
+    color: #6B7280;
+
+}
+
+/*=========================================
+        REMEMBER
+=========================================*/
+
+.remember-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 30px;
+
+    font-size: 15px;
+
+}
+
+.checkbox {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+.remember-row a {
+
+    color: var(--primary-color);
+
+    font-weight: 600;
+
+}
+
+/*=========================================
+        BUTTON
+=========================================*/
+
+.auth-btn {
+
+    width: 100%;
+
+    height: 58px;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+}
+
+/*=========================================
+        DIVIDER
+=========================================*/
+
+.divider {
+
+    position: relative;
+
+    margin: 35px 0;
+
+}
+
+.divider::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 1px;
+
+    background: #E5E7EB;
+
+    left: 0;
+
+    top: 50%;
+
+}
+
+.divider span {
+
+    position: relative;
+
+    background: var(--white-color);
+
+    padding: 0 18px;
+
+    font-weight: 600;
+
+}
+
+/*=========================================
+        AUTH DIVIDER
+=========================================*/
+
+.auth-divider {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    margin: 35px 0;
+
+}
+
+.auth-divider::before,
+
+.auth-divider::after {
+
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #E5E7EB;
+
+}
+
+.auth-divider span {
+
+    color: #6B7280;
+
+    font-size: 17px;
+
+    font-weight: 500;
+
+}
+
+/*=========================================
+        SOCIAL ICONS
+=========================================*/
+
+.social-icons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    margin-bottom: 35px;
+
+}
+
+.social-btn {
+
+    width: 48px;
+
+    height: 48px;
+
+    border-radius: 50%;
+
+    background: var(--white-color);
+
+    border: 1px solid #E5E7EB;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
+
+    transition: var(--transition);
+
+}
+
+.social-btn:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 18px 35px rgba(0, 0, 0, .10);
+
+    border-color: var(--primary-color);
+
+}
+
+.social-btn img {
+
+    width: 28px;
+
+    height: 28px;
+
+    object-fit: contain;
+
+}
+
+
+
+.social-btn i {
+
+    font-size: 20px;
+
+}
+
+/*=========================================
+        BRAND COLORS
+=========================================*/
+
+.facebook {
+
+    color: #1877F2;
+
+}
+
+.apple {
+
+    color: #000000;
+
+}
+
+/*=========================================
+        FOOTER
+=========================================*/
+
+.auth-footer {
+
+    margin-top: 35px;
+
+    font-size: 16px;
+
+}
+
+.auth-footer a {
+
+    color: var(--primary-color);
+
+    font-weight: 700;
+
+}
+
+
+/******************************************************Register Page**************************************************/
+
+/*=========================================
+            REGISTER SECTION
+=========================================*/
+
+.register-section {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 50px 20px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(rgba(255, 255, 255, .85), rgba(255, 255, 255, .85)),
+        url("../images/register-bg.jpg") center/cover no-repeat;
+
+}
+
+.register-section .global-container {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+/*=========================================
+            BACKGROUND SHAPES
+=========================================*/
+
+.register-shape {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    z-index: 0;
+
+}
+
+.register-shape-1 {
+
+    width: 320px;
+
+    height: 320px;
+
+    background: rgba(59, 130, 246, .10);
+
+    top: -120px;
+
+    left: -120px;
+
+}
+
+.register-shape-2 {
+
+    width: 230px;
+
+    height: 230px;
+
+    background: rgba(245, 158, 11, .12);
+
+    bottom: -80px;
+
+    right: -70px;
+
+}
+
+.register-shape-3 {
+
+    width: 160px;
+
+    height: 160px;
+
+    background: rgba(59, 130, 246, .08);
+
+    top: 45%;
+
+    right: 10%;
+
+}
+
+.register-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    backdrop-filter: blur(4px);
+
+}
+
+/*=========================================
+            TOP ACTIONS
+=========================================*/
+
+.register-top-actions {
+
+    position: absolute;
+
+    top: 35px;
+
+    right: 40px;
+
+    display: flex;
+
+    gap: 15px;
+
+    z-index: 20;
+
+}
+
+/*=========================================
+            REGISTER CARD
+=========================================*/
+
+.register-card {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: 100%;
+
+    max-width: 650px;
+
+    background: rgba(255, 255, 255, .94);
+
+    backdrop-filter: blur(18px);
+
+    border-radius: 30px;
+
+    padding: 55px;
+
+    box-shadow: 0 25px 70px rgba(0, 0, 0, .08);
+
+    text-align: center;
+
+}
+
+/*=========================================
+            LOGO
+=========================================*/
+
+.register-logo {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+}
+
+.register-logo img {
+
+    width: 190px;
+
+    display: block;
+
+}
+
+/*=========================================
+            BADGE
+=========================================*/
+
+.register-card .section-badge {
+
+    margin-bottom: 22px;
+
+}
+
+/*=========================================
+            TITLE
+=========================================*/
+
+.register-card h1 {
+
+    font-size: 46px;
+
+    line-height: 1.2;
+
+    margin-bottom: 18px;
+
+}
+
+.register-card>p {
+
+    max-width: 480px;
+
+    margin: 0 auto 40px;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    color: var(--text-color);
+
+}
+
+/*=========================================
+            REGISTER FORM
+=========================================*/
+
+.register-input-group {
+
+    text-align: left;
+
+    margin-bottom: 22px;
+
+}
+
+.register-input-group label {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: var(--heading-color);
+
+}
+
+.register-input-group input {
+
+    width: 100%;
+
+    height: 58px;
+
+    padding: 0 18px;
+
+    border: 1px solid #D9E2EC;
+
+    border-radius: 16px;
+
+    background: var(--white-color);
+
+    color: var(--heading-color);
+
+    transition: var(--transition);
+
+}
+
+.register-input-group input::placeholder {
+
+    color: #9CA3AF;
+
+}
+
+.register-input-group input:focus {
+
+    border-color: var(--primary-color);
+
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, .12);
+
+}
+
+/*=========================================
+            PASSWORD BOX
+=========================================*/
+
+.register-password-box {
+
+    position: relative;
+
+}
+
+.register-password-box input {
+
+    padding-right: 60px;
+
+}
+
+.register-password-toggle {
+
+    position: absolute;
+
+    top: 50%;
+
+    right: 18px;
+
+    transform: translateY(-50%);
+
+    width: 40px;
+
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: none;
+
+    background: none;
+
+    color: #6B7280;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+}
+
+.register-password-toggle:hover {
+
+    color: var(--primary-color);
+
+}
+
+/*=========================================
+        TERMS & CONDITIONS
+=========================================*/
+
+.register-terms-row {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    margin: 10px 0 30px;
+
+}
+
+.register-checkbox {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    color: var(--text-color);
+
+}
+
+.register-checkbox input {
+
+    width: 18px;
+
+    height: 18px;
+
+    accent-color: var(--primary-color);
+
+}
+
+.register-checkbox a {
+
+    color: var(--primary-color);
+
+    font-weight: 600;
+
+}
+
+.register-checkbox a:hover {
+
+    color: var(--secondary-color);
+
+}
+
+/*=========================================
+        REGISTER BUTTON
+=========================================*/
+
+.register-btn {
+
+    width: 100%;
+
+    height: 58px;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    transition: var(--transition);
+
+}
+
+.register-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 12px 30px rgba(59, 130, 246, .25);
+
+}
+
+/*=========================================
+            REGISTER DIVIDER
+=========================================*/
+
+.register-divider {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    margin: 35px 0;
+
+}
+
+.register-divider::before,
+
+.register-divider::after {
+
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #E5E7EB;
+
+}
+
+.register-divider span {
+
+    color: #6B7280;
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+}
+
+/*=========================================
+        SOCIAL ICONS
+=========================================*/
+
+.register-social-icons {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 35px;
+
+}
+
+.register-social-btn {
+
+    width: 48px;
+
+    height: 48px;
+
+    border-radius: 50%;
+
+    background: var(--white-color);
+
+    border: 1px solid #E5E7EB;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition: var(--transition);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+
+}
+
+.register-social-btn:hover {
+
+    transform: translateY(-5px);
+
+    border-color: var(--primary-color);
+
+    box-shadow: 0 18px 35px rgba(0, 0, 0, .12);
+
+}
+
+.register-social-btn img {
+
+    width: 28px;
+
+    height: 28px;
+
+    object-fit: contain;
+
+}
+
+.register-social-btn.facebook {
+
+    color: #1877F2;
+
+    font-size: 20px;
+
+}
+
+.register-social-btn.apple {
+
+    color: #000;
+
+    font-size: 20px;
+
+}
+
+/*=========================================
+        REGISTER FOOTER
+=========================================*/
+
+.register-footer {
+
+    text-align: center;
+
+    font-size: 16px;
+
+    color: var(--text-color);
+
+}
+
+.register-footer a {
+
+    color: var(--primary-color);
+
+    font-weight: 700;
+
+    margin-left: 5px;
+
+    transition: var(--transition);
+
+}
+
+.register-footer a:hover {
+
+    color: var(--secondary-color);
+
+}
+
+/*=========================================
+        RESPONSIVE
+=========================================*/
+
+@media(max-width:991px) {
+
+    .register-card {
+
+        max-width: 90%;
+
+        padding: 45px;
+
+    }
+
+}
+
+@media(max-width:767px) {
+
+    .register-section {
+
+        padding: 30px 15px;
+
+    }
+
+    .register-card {
+
+        max-width: 100%;
+
+        padding: 35px 25px;
+
+        border-radius: 24px;
+
+    }
+
+    .register-logo img {
+
+        width: 160px;
+
+    }
+
+    .register-card h1 {
+
+        font-size: 34px;
+
+    }
+
+    .register-card>p {
+
+        font-size: 15px;
+
+    }
+
+    .register-top-actions {
+
+        top: 20px;
+
+        right: 20px;
+
+    }
+
+}
+
+@media(max-width:480px) {
+
+    .register-card {
+
+        padding: 30px 20px;
+
+    }
+
+    .register-card h1 {
+
+        font-size: 28px;
+
+    }
+
+    .register-social-icons {
+
+        gap: 14px;
+
+    }
+
+    .register-social-btn {
+
+        width: 54px;
+
+        height: 54px;
+
+    }
+
+    .register-social-btn img {
+
+        width: 24px;
+
+        height: 24px;
+
+    }
+
+    .register-social-btn.facebook {
+
+        font-size: 24px;
+
+    }
+
+    .register-social-btn.apple {
+
+        font-size: 26px;
+
+    }
+
+}
+
+/*=========================================
+        AUTH RESPONSIVE
+=========================================*/
+
+@media (max-width:991px) {
+
+    .auth-section {
+
+        padding: 80px 20px 40px;
+
+    }
+
+    .auth-top-actions {
+
+        top: 25px;
+
+        right: 25px;
+
+    }
+
+    .auth-card {
+
+        max-width: 600px;
+
+        padding: 45px;
+
+    }
+
+    .auth-card h1 {
+
+        font-size: 40px;
+
+    }
+
+    .auth-card>p {
+
+        font-size: 16px;
+
+        margin-bottom: 35px;
+
+    }
+
+    .auth-logo img {
+
+        width: 170px;
+
+    }
+
+}
+
+@media (max-width:767px) {
+
+    .auth-section {
+
+        padding: 90px 15px 30px;
+
+    }
+
+    .global-container {
+
+        min-height: auto;
+
+    }
+
+    .auth-top-actions {
+
+        top: 20px;
+
+        right: 20px;
+
+        gap: 10px;
+
+    }
+
+    .auth-card {
+
+        padding: 35px 25px;
+
+        border-radius: 24px;
+    }
+
+    .auth-logo img {
+
+        width: 150px;
+
+    }
+
+    .auth-card h1 {
+
+        font-size: 32px;
+
+        margin: 20px 0 15px;
+
+    }
+
+    .auth-card>p {
+
+        font-size: 15px;
+
+        margin-bottom: 30px;
+
+    }
+
+    .input-group {
+
+        margin-bottom: 20px;
+
+    }
+
+    .input-group input {
+
+        height: 52px;
+
+        font-size: 15px;
+
+    }
+
+    .auth-btn {
+
+        height: 52px;
+
+        font-size: 16px;
+
+    }
+
+    .remember-row {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+    }
+
+    .auth-divider {
+
+        gap: 12px;
+
+        margin: 30px 0;
+
+    }
+
+    .auth-divider span {
+
+        font-size: 15px;
+
+    }
+
+    .social-icons {
+
+        gap: 15px;
+
+        margin-bottom: 30px;
+
+    }
+
+    .social-btn {
+
+        width: 46px;
+
+        height: 46px;
+
+    }
+
+    .social-btn img {
+
+        width: 24px;
+
+        height: 24px;
+
+    }
+
+    .social-btn i {
+
+        font-size: 18px;
+
+    }
+
+    .auth-footer {
+
+        font-size: 15px;
+
+        line-height: 1.8;
+
+    }
+
+}
+
+@media (max-width:480px) {
+
+    .auth-section {
+
+        padding: 80px 12px 25px;
+
+    }
+
+    .auth-card {
+
+        padding: 28px 18px;
+
+        border-radius: 20px;
+
+    }
+
+    .auth-logo img {
+
+        width: 130px;
+
+    }
+
+    .auth-card h1 {
+
+        font-size: 26px;
+
+    }
+
+    .auth-card>p {
+
+        font-size: 14px;
+
+    }
+
+    .input-group label {
+
+        font-size: 14px;
+
+    }
+
+    .input-group input {
+
+        height: 48px;
+
+        padding: 0 15px;
+
+        font-size: 14px;
+
+    }
+
+    .password-box input {
+
+        padding-right: 50px;
+
+    }
+
+    .password-toggle {
+
+        right: 15px;
+
+    }
+
+    .auth-btn {
+
+        height: 48px;
+
+        font-size: 15px;
+
+    }
+
+    .remember-row {
+
+        font-size: 14px;
+
+    }
+
+    .auth-divider span {
+
+        font-size: 14px;
+
+    }
+
+    .social-btn {
+
+        width: 42px;
+
+        height: 42px;
+
+    }
+
+    .social-btn img {
+
+        width: 22px;
+
+        height: 22px;
+
+    }
+
+    .social-btn i {
+
+        font-size: 17px;
+
+    }
+
+    .auth-footer {
+
+        font-size: 14px;
+
+    }
+
+    .shape-1 {
+
+        width: 180px;
+
+        height: 180px;
+
+    }
+
+    .shape-2 {
+
+        width: 150px;
+
+        height: 150px;
+
+    }
+
+    .shape-3 {
+
+        display: none;
+
+    }
+
+}
+
+/*=========================================
+        REGISTER RESPONSIVE
+=========================================*/
+
+@media (max-width:991px) {
+
+    .register-section {
+
+        padding: 80px 20px 40px;
+
+    }
+
+    .register-top-actions {
+
+        top: 25px;
+
+        right: 25px;
+
+    }
+
+    .register-card {
+
+        max-width: 600px;
+
+        padding: 45px;
+
+    }
+
+    .register-logo img {
+
+        width: 170px;
+
+    }
+
+    .register-card h1 {
+
+        font-size: 40px;
+
+    }
+
+    .register-card>p {
+
+        font-size: 16px;
+
+        margin-bottom: 35px;
+
+    }
+
+}
+
+@media (max-width:767px) {
+
+    .register-section {
+
+        padding: 90px 15px 30px;
+
+    }
+
+    .register-section .global-container {
+
+        min-height: auto;
+
+    }
+
+    .register-top-actions {
+
+        top: 20px;
+
+        right: 20px;
+
+        gap: 10px;
+
+    }
+
+    .register-card {
+
+        max-width: 100%;
+
+        padding: 35px 25px;
+
+        border-radius: 24px;
+
+    }
+
+    .register-logo img {
+
+        width: 150px;
+
+    }
+
+    .register-card h1 {
+
+        font-size: 32px;
+
+    }
+
+    .register-card>p {
+
+        font-size: 15px;
+
+        margin-bottom: 30px;
+
+    }
+
+    .register-input-group {
+
+        margin-bottom: 20px;
+
+    }
+
+    .register-input-group input {
+
+        height: 52px;
+
+        font-size: 15px;
+
+    }
+
+    .register-btn {
+
+        height: 52px;
+
+        font-size: 16px;
+
+    }
+
+    .register-password-toggle {
+
+        width: 36px;
+
+        height: 36px;
+
+        right: 12px;
+
+    }
+
+    .register-divider {
+
+        gap: 12px;
+
+        margin: 30px 0;
+
+    }
+
+    .register-divider span {
+
+        font-size: 15px;
+
+    }
+
+    .register-social-icons {
+
+        gap: 15px;
+
+        margin-bottom: 30px;
+
+    }
+
+    .register-social-btn {
+
+        width: 46px;
+
+        height: 46px;
+
+    }
+
+    .register-social-btn img {
+
+        width: 24px;
+
+        height: 24px;
+
+    }
+
+    .register-social-btn.facebook,
+
+    .register-social-btn.apple {
+
+        font-size: 18px;
+
+    }
+
+    .register-footer {
+
+        font-size: 15px;
+
+        line-height: 1.8;
+
+    }
+
+}
+
+@media (max-width:480px) {
+
+    .register-section {
+
+        padding: 80px 12px 25px;
+
+    }
+
+    .register-card {
+
+        padding: 28px 18px;
+
+        border-radius: 20px;
+
+    }
+
+    .register-logo img {
+
+        width: 130px;
+
+    }
+
+    .register-card h1 {
+
+        font-size: 26px;
+
+    }
+
+    .register-card>p {
+
+        font-size: 14px;
+
+    }
+
+    .register-input-group label {
+
+        font-size: 14px;
+
+    }
+
+    .register-input-group input {
+
+        height: 48px;
+
+        padding: 0 15px;
+
+        font-size: 14px;
+
+    }
+
+    .register-password-box input {
+
+        padding-right: 50px;
+
+    }
+
+    .register-password-toggle {
+
+        right: 10px;
+
+    }
+
+    .register-checkbox {
+
+        align-items: flex-start;
+
+        font-size: 14px;
+
+        line-height: 1.6;
+
+    }
+
+    .register-checkbox input {
+
+        margin-top: 3px;
+
+        flex-shrink: 0;
+
+    }
+
+    .register-btn {
+
+        height: 48px;
+
+        font-size: 15px;
+
+    }
+
+    .register-divider span {
+
+        font-size: 14px;
+
+    }
+
+    .register-social-btn {
+
+        width: 42px;
+
+        height: 42px;
+
+    }
+
+    .register-social-btn img {
+
+        width: 22px;
+
+        height: 22px;
+
+    }
+
+    .register-social-btn.facebook,
+
+    .register-social-btn.apple {
+
+        font-size: 17px;
+
+    }
+
+    .register-footer {
+
+        font-size: 14px;
+
+    }
+
+    .register-shape-1 {
+
+        width: 180px;
+
+        height: 180px;
+
+    }
+
+    .register-shape-2 {
+
+        width: 150px;
+
+        height: 150px;
+
+    }
+
+    .register-shape-3 {
+
+        display: none;
+
+    }
+
+}
+
+/*=========================================
+        MOBILE TOP ACTIONS
+=========================================*/
+
+@media (max-width:767px) {
+
+    .auth-top-actions,
+    .register-top-actions {
+
+        position: fixed;
+
+        top: 15px;
+
+        right: 15px;
+
+        display: flex;
+
+        gap: 10px;
+
+        z-index: 9999;
+
+    }
+
+    .auth-top-actions .icon-btn,
+    .register-top-actions .icon-btn {
+
+        width: 42px;
+
+        height: 42px;
+
+        font-size: 16px;
+
+    }
+
+}
+
+@media (max-width:480px) {
+
+    .auth-top-actions,
+    .register-top-actions {
+
+        top: 12px;
+
+        right: 12px;
+
+        gap: 8px;
+
+    }
+
+    .auth-top-actions .icon-btn,
+    .register-top-actions .icon-btn {
+
+        width: 38px;
+
+        height: 38px;
+
+        font-size: 15px;
+    }
+
+}
+
+/*=========================================
+        AUTH DARK MODE
+=========================================*/
+
+body.dark-mode .auth-card,
+body.dark-mode .register-card {
+
+    background: #1E293B;
+    color: #fff;
+
+}
+
+body.dark-mode .auth-card h1,
+body.dark-mode .register-card h1 {
+
+    color: #fff;
+
+}
+
+body.dark-mode .auth-card p,
+body.dark-mode .register-card p {
+
+    color: #CBD5E1;
+
+}
+
+body.dark-mode .input-group input,
+body.dark-mode .register-input-group input {
+
+    background: #111827;
+    border: 1px solid #334155;
+    color: #fff;
+
+}
+
+body.dark-mode .auth-divider::before,
+body.dark-mode .auth-divider::after,
+body.dark-mode .register-divider::before,
+body.dark-mode .register-divider::after {
+
+    background: #334155;
+
+}
+
+body.dark-mode .social-btn,
+body.dark-mode .register-social-btn {
+
+    background: #111827;
+    border-color: #334155;
+
+}
+
+body.dark-mode .password-toggle,
+body.dark-mode .register-password-toggle {
+
+    color: #CBD5E1;
+
+}
