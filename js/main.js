@@ -465,3 +465,35 @@ const cardObserver = new IntersectionObserver((entries) => {
 });
 
 cards.forEach(card => cardObserver.observe(card));
+
+/*=========================================
+        SCROLL TO TOP
+=========================================*/
+
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 400) {
+
+        scrollTopBtn.classList.add("show");
+
+    } else {
+
+        scrollTopBtn.classList.remove("show");
+
+    }
+
+});
+
+scrollTopBtn.addEventListener("click", () => {
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+});
