@@ -9046,6 +9046,84 @@ body.dark-mode .home2-hero .secondary-btn {
     color: #ffffff !important;
 }
 
+/*=========================================
+        MISSION & VISION - DARK MODE
+=========================================*/
+
+body.dark-mode .mission-vision .section-title h2,
+body.dark-mode .mission-vision .section-title p,
+body.dark-mode .mission-vision .purpose-card h3 {
+    color: #ffffff;
+}
+
+/*=========================================
+    BULK ORDER FORM - DARK MODE INPUT ICONS
+=========================================*/
+
+/* Date picker icon */
+body.dark-mode input[type="date"] {
+    color-scheme: dark;
+}
+
+/* Calendar icon visible */
+body.dark-mode input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1) brightness(2);
+    opacity: 1;
+    cursor: pointer;
+}
+
+/* Number input spinner always visible */
+body.dark-mode input[type="number"] {
+    color-scheme: dark;
+}
+
+/* Chrome / Edge spinner */
+body.dark-mode input[type="number"]::-webkit-inner-spin-button,
+body.dark-mode input[type="number"]::-webkit-outer-spin-button {
+    opacity: 1;
+    filter: invert(1) brightness(2);
+    cursor: pointer;
+}
+
+/* Light Mode */
+body:not(.dark-mode) input[type="number"],
+body:not(.dark-mode) input[type="date"] {
+    color-scheme: light;
+}
+
+/* Dark Mode */
+body.dark-mode input[type="number"],
+body.dark-mode input[type="date"] {
+    color-scheme: dark;
+}
+
+/* Spinner - Light Mode */
+body:not(.dark-mode) input[type="number"]::-webkit-inner-spin-button,
+body:not(.dark-mode) input[type="number"]::-webkit-outer-spin-button {
+    opacity: 1;
+}
+
+/* Spinner - Dark Mode */
+body.dark-mode input[type="number"]::-webkit-inner-spin-button,
+body.dark-mode input[type="number"]::-webkit-outer-spin-button {
+    opacity: 1;
+    filter: invert(1);
+}
+
+/*=========================================
+    DARK MODE DATE PICKER ICON
+=========================================*/
+
+body.dark-mode input[type="date"] {
+    color-scheme: dark;
+}
+
+body.dark-mode input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: brightness(0) invert(1);
+    opacity: 1;
+    cursor: pointer;
+}
+
 /*********************************************************************Responsive**********************************************************/
 
 /*=========================================
@@ -14541,5 +14619,125 @@ html[dir="rtl"] .nav-menu {
 
     margin-right: 40px;
     margin-left: 0;
+
+}
+
+/*=========================================
+    IPAD MINI - MEASUREMENT IMAGE FIX
+=========================================*/
+
+@media only screen and (min-width: 768px) and (max-width: 820px) {
+
+    .measure-image {
+        width: 100% !important;
+        overflow: visible !important;
+        border-radius: 20px;
+    }
+
+    .measure-image img {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100% !important;
+        object-fit: contain !important;
+        object-position: center !important;
+        display: block;
+        margin: 0 auto;
+    }
+
+}
+
+/*=========================================
+    HOME 1 HERO - DARK MODE SECONDARY BUTTON
+=========================================*/
+
+body.dark-mode .hero .hero-buttons .secondary-btn {
+
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+
+}
+
+body.dark-mode .hero .hero-buttons .secondary-btn:hover {
+
+    background: #ffffff !important;
+    color: var(--primary-color) !important;
+    border-color: #ffffff !important;
+
+}
+
+/*=========================================
+    BULK ORDERS CTA - WHITE SECONDARY BUTTON
+=========================================*/
+
+.bulk-cta .secondary-btn {
+    border: 2px solid #ffffff !important;
+    color: #ffffff !important;
+    background: transparent;
+}
+
+.bulk-cta .secondary-btn:hover {
+    background: #ffffff !important;
+    color: var(--primary-color) !important;
+    border-color: #ffffff !important;
+}
+
+/* Dark Mode */
+body.dark-mode .bulk-cta .secondary-btn {
+    border: 2px solid #ffffff !important;
+    color: #ffffff !important;
+    background: transparent;
+}
+
+body.dark-mode .bulk-cta .secondary-btn:hover {
+    background: #ffffff !important;
+    color: var(--primary-color) !important;
+    border-color: #ffffff !important;
+}
+
+/*=========================================
+    SIZE TABLE - MOBILE FULL WIDTH
+=========================================*/
+
+@media (max-width:767px) {
+
+    .size-table-card {
+        padding: 18px !important;
+        overflow-x: visible !important;
+    }
+
+    .size-table-card table {
+        width: 100% !important;
+        min-width: unset !important;
+        table-layout: fixed !important;
+    }
+
+    .size-table-card th,
+    .size-table-card td {
+        padding: 10px 4px !important;
+        font-size: 13px !important;
+        white-space: normal !important;
+        word-break: break-word;
+    }
+
+    .size-table-card h3 {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+}
+
+@media (max-width:767px) {
+
+    .size-chart-table table {
+        min-width: 460px !important;
+        /* 500px or 520px irundha reduce pannunga */
+    }
+
+    .size-chart-table th,
+    .size-chart-table td {
+        padding: 14px 6px !important;
+        font-size: 13px !important;
+        white-space: nowrap;
+    }
 
 }
