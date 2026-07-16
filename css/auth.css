@@ -2076,3 +2076,11 @@ body.dark-mode .register-password-toggle {
     }
 
 }
+
+body.dark-mode .auth-logo img {
+    content: url("../images/logo-dark.png");
+}
+
+body.dark-mode .register-logo img {
+    content: url("../images/logo-dark.png");
+}
